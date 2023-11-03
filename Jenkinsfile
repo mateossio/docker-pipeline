@@ -8,9 +8,10 @@ pipeline {
       }
     }
 
-    stage('Checkout Code') {
+    stage('Installing and Starting App') {
       steps {
-        git url: 'git@github.com:jenkinsci/git-client-plugin.git'
+        sh 'npm i'
+        sh 'npm start'
       }
     }
 
