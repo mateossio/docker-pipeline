@@ -13,13 +13,5 @@ pipeline {
       }
     }
 
-    stage('Another echo') {
-      steps {
-        sh '''ls -l
-pwd
-npm i'''
-      }
-    }
-
   }
 }
