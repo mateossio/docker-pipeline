@@ -9,7 +9,7 @@ pipeline {
 
     stage('Checkout Code') {
       steps {
-        git credentialsId: 'github-user-pass', url: 'git@github.com:jenkinsci/git-client-plugin.git'
+        git credentialsId: 'git', url: 'git@github.com:jenkinsci/git-client-plugin.git'
       }
     }
 
