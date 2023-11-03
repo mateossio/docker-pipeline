@@ -9,7 +9,7 @@ pipeline {
 
     stage('Checkout Code') {
       steps {
-        git 'https://github.com/mateossio/docker-pipeline'
+        git(url: 'https://github.com/mateossio/docker-pipeline', branch: 'master')
       }
     }
 
