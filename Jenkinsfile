@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Checkout Code') {
+      steps {
+        git 'https://github.com/mateossio/docker-pipeline'
+      }
+    }
+
   }
 }
