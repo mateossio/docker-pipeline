@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout Code') {
+    stage('Echo test') {
       steps {
-        git(url: 'https://github.com/mateossio/docker-pipeline', branch: 'master')
+        sh 'echo "Hello World"'
       }
     }
 
