@@ -9,7 +9,7 @@ pipeline {
 
     stage('Checkout Code') {
       steps {
-        git(url: 'https://github.com/mateossio/docker-pipeline', branch: 'master')
+        git credentialsId: 'github-user-pass', url: 'git@github.com:jenkinsci/git-client-plugin.git'
       }
     }
 
