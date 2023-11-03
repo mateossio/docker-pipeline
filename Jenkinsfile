@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git(url: 'https://github.com/mateossio/docker-pipeline', branch: 'main')
+        git(url: 'https://github.com/mateossio/docker-pipeline', branch: 'master')
       }
     }
 
