@@ -8,25 +8,19 @@ pipeline {
       }
     }
 
-    stage('Installing and Starting App') {
-      steps {
-        sh 'npm i'
-      }
-    }
-
     stage('Building Docker Img'){
       steps {
         sh 'docker build -f ./Dockerfile . -t docker push mateofbossio/docker-pipeline:latest'
       }
     }
 
-    steps('Login Dockerhub'){
+    stage('Login Dockerhub'){
       steps{
         sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS'
       }
     }
 
-    steps('Push Docker img'){
+    stage('Push Docker img'){
       steps{
         sh 'docker push mateofbossio/docker-pipeline:latest'
       }
