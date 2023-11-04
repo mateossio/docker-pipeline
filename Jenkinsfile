@@ -6,7 +6,7 @@ pipeline {
         sh 'echo "Hello User:"'
         sh 'echo $USER'
         sh 'echo "Dockerhub cred:"'
-        sh 'user ${DOCKERHUB_USER} passwd ${DOCKERHUB_PASS} '
+        sh 'echo "user ${DOCKERHUB_USER} passwd ${DOCKERHUB_PASS}"'
       }
     }
 
