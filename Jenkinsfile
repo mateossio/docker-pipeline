@@ -5,6 +5,8 @@ pipeline {
       steps {
         sh 'echo "Hello User:"'
         sh 'echo $USER'
+        sh 'echo "Dockerhub cred:"'
+        sh 'user ${DOCKERHUB_USER} passwd ${DOCKERHUB_PASS} '
       }
     }
 
@@ -16,7 +18,7 @@ pipeline {
 
     stage('Login Dockerhub'){
       steps{
-        sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS'
+        sh 'docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASS}'
       }
     }
 
