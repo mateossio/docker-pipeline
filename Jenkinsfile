@@ -10,19 +10,19 @@ pipeline {
 
     stage('Building Docker Img'){
       steps {
-        sh 'sudo docker build -f ./Dockerfile . -t mateofbossio/docker-pipeline:latest'
+        sh 'docker build -f ./Dockerfile . -t mateofbossio/docker-pipeline:latest'
       }
     }
 
     stage('Login Dockerhub'){
       steps{
-        sh 'sudo docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS'
+        sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS'
       }
     }
 
     stage('Push Docker img'){
       steps{
-        sh 'sudo docker push mateofbossio/docker-pipeline:latest'
+        sh 'docker push mateofbossio/docker-pipeline:latest'
       }
     }
 
