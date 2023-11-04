@@ -10,7 +10,7 @@ pipeline {
 
     stage('Building Docker Img'){
       steps {
-        sh 'docker build -f ./Dockerfile . -t docker push mateofbossio/docker-pipeline:latest'
+        sh 'docker build -f ./Dockerfile . -t mateofbossio/docker-pipeline:latest'
       }
     }
 
