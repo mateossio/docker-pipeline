@@ -1,8 +1,7 @@
 pipeline {
   agent any
   environment {
-    DOCKERHUB_USER = credentials('DOCKERHUB_USER')
-    DOCKERHUB_PASS = credentials('DOCKERHUB_PASS')
+    DOCKERHUB_CRED = credentials('dockerhub-cred')
   }
   stages {
     stage('Echo test') {
@@ -10,7 +9,7 @@ pipeline {
         sh 'echo "Hello User:"'
         sh 'echo $USER'
         sh 'echo "Dockerhub cred:"'
-        sh 'echo "user ${DOCKERHUB_USER} passwd ${DOCKERHUB_PASS} or $DOCKERHUB_PASS"'
+        sh 'echo "user ${DOCKERHUB_CRED_USR} passwd ${DOCKERHUB_CRED_PSW} or $DOCKERHUB_PASS"'
       }
     }
 
@@ -22,7 +21,7 @@ pipeline {
 
     stage('Login Dockerhub'){
       steps{
-        sh 'docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASS}'
+        sh 'docker login -u $DOCKERHUB_CRED_USR -p $DOCKERHUB_CRED_PSW'
       }
     }
 
