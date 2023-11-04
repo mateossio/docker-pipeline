@@ -1,12 +1,16 @@
 pipeline {
   agent any
+  credentials {
+    DOCKERHUB_USER = credentials('DOCKERHUB_USER')
+    DOCKERHUB_PASS = credentials('DOCKERHUB_PASS')
+  }
   stages {
     stage('Echo test') {
       steps {
         sh 'echo "Hello User:"'
         sh 'echo $USER'
         sh 'echo "Dockerhub cred:"'
-        sh 'echo "user ${DOCKERHUB_USER} passwd ${DOCKERHUB_PASS}"'
+        sh 'echo "user ${DOCKERHUB_USER} passwd ${DOCKERHUB_PASS} or $DOCKERHUB_PASS"'
       }
     }
 
