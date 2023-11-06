@@ -1,39 +1,21 @@
-## Todo App: A Simple Todo Application
+## CI/CD Pipeline using Jenkins and Docker
 
-### What is Todo App?
+### Workflow
 
-This is a todo application built with React.js and backend API server written in Node.js. It's a simple, intuitive, and elegant UI for managing your todo list. It comes with a number of great features such as creating, updating or deleting tasks from the list.
+The workflow of this React App starts when the devs commit code to the repo, then a Jenkins server pulls it, builds & tests it and after that creates and pushes a Docker image ready to be deployed. Finally another server hosted in Linode runs it and makes it accesible to the user (you)
 <br/>
 <br/>
-Our app is very simple and straightforward. We have a clean interface that makes it easy to see what's happening, and how you can manage your tasks.
+I used a public repo (https://github.com/masudranashawon/todo-app) of a ToDo app made with react.
 
-### Features:
+### Access the website:
+http://139.144.56.207/
 
-1.  All of the CRUD operations has been handled properly as the async actions
-2.  An integrated JSON server holds and serves the data under the hood
-3.  Added tasks also saved into the local storage of the client’s browser
+### How does it work?
+image.png
 
-### How to use this repo?
-
-Download or clone this repo and run the following command in the terminal:
-
-```
-npm install
-or
-npm i
-```
-
-### View the app (Hosted on Netlify):
-
-https://masud-todo-app.netlify.app/
-
-### Necessary Links:
-
-1. API Endpoint: https://capricious-ash-stomach.glitch.me/tasks
-2. API GitHub: https://github.com/masudranashawon/todo-app-server
-
-### Tools:
-
-React.js, Tailwind CSS
-
-### Thanks for visiting this repo, take care!
+### Some insights about CI/CD gained while working at this project:
+Streamlined Development⚙️: CI/CD with Jenkins automates the build, test, and deployment processes, reducing manual intervention and accelerating the pace of development cycles.
+Containerized Deployments🐳: Docker allows to encapsulate applications within containers, ensuring consistency across different environments and enabling smoother, more reliable deployments.
+Enhanced Collaboration👨‍💻👩‍💻: This implementation isn't just about technology; it's a catalyst for improved collaboration and communication among our teams, fostering a more integrated DevOps culture.
+Faster Time-to-Market⚡: CI/CD automates the build, test, and deployment processes, reducing manual errors and accelerating the delivery of software updates. This means new features and bug fixes can be rolled out more quickly.
+Improved Quality and Reliability 🔐 : Automation in CI/CD pipelines ensures regular and consistent testing. This leads to higher-quality software with fewer bugs as issues are caught early in the development cycle, resulting in more reliable releases.
