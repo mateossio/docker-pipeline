@@ -4,16 +4,19 @@ pipeline {
     DOCKERHUB_CRED = credentials('dockerhub-cred')
   }
   stages {
-    stage('Echo test') {
+    stage('Build Artifacts') {
       steps {
-        sh 'echo "Hello User:"'
-        sh 'echo $USER'
-        sh 'echo "Dockerhub cred:"'
-        sh 'echo "user ${DOCKERHUB_CRED_USR} passwd ${DOCKERHUB_CRED_PSW} or $DOCKERHUB_PASS"'
+        sh 'echo "Building:"'
       }
     }
 
-    stage('Building Docker Img'){
+    stage('Test Artifacts') {
+      steps {
+        sh 'echo "Testing:"'
+      }
+    }
+
+    stage('Build Docker Img'){
       steps {
         sh 'docker build -f ./Dockerfile . -t mateofbossio/docker-pipeline:latest'
       }
